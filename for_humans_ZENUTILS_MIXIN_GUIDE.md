@@ -498,7 +498,7 @@ Allows targeting bytecode patterns using Java-like expression syntax. Requires `
 Use `at: {value: "MIXINEXTRAS:EXPRESSION"}`
 
 ```js
-#mixin Definition {id: "enchantment", local: {name: "enchantment"}}
+#mixin Definition {id: "enchantment", local: {type: "Lnet/minecraft/enchantment/Enchantment;", name: "enchantment"}}
 #mixin Expression {value: "enchantment == null"}
 #mixin ModifyExpressionValue
 #{
@@ -518,7 +518,7 @@ function modifyNullCheck(original as bool) as bool {
 - Your handler modifies the value of that expression
 
 **Definition types:**
-- `local: {type: "ClassName"}` - Define a local variable identifier
+- `local: {type: "Lcom/example/Class;", name: "x"}` - Define a local variable identifier. `type` is required and is a descriptor (`I` for an int); without it nothing matches
 - `field: "Lcom/example/Class;fieldName:LType;"` - Define a field identifier
 - `method: "Lcom/example/Class;methodName(...)V"` - Define a method identifier
 
@@ -595,6 +595,21 @@ function captureLocal(original as int, someLocal as int[]) as int {
 
 Share allows you to create your own local variables in the target method that you can reuse in other injectors targeting the same method.
 It works the same way as @Local, but you need to give it a name, and it needs to be a LocalRef = array.
+ZenUtils before 1.28.7 puts `#mixin Share` on the handler method instead of its parameter, so on the pack's 1.27.5 it needs NischiTweaker 1.0.4 or later, which backports the fix ("Fix Share Annotation (ASM Toggle)", on by default).
+
+```js
+#mixin Inject {method: "loadConfig", at: {value: "HEAD"}}
+#mixin Share{value: "shared"}
+function setShared(ci as mixin.CallbackInfo, shared as int[]) as void {
+    shared[0] = 42;
+}
+
+#mixin Inject {method: "loadConfig", at: {value: "TAIL"}}
+#mixin Share{value: "shared"}
+function readShared(ci as mixin.CallbackInfo, shared as int[]) as void {
+    print(shared[0]); // 42, set by the HEAD injector
+}
+```
 
 ## @Cancellable Usage
 
