@@ -393,6 +393,10 @@ git clone --depth 1 'https://github.com/Darkhax-Minecraft/Enchantment-Descriptio
 # https://www.curseforge.com/minecraft/mc-mods/enchantmentcontrol
 git clone --depth 1 'https://github.com/Nischhelm/EnchantmentControl' 'sources/enchantmentcontrol/repo'
 
+# enchanter_tools
+# https://www.curseforge.com/minecraft/mc-mods/enchanter-tools
+git clone --depth 1 'https://github.com/SirSquidly/Enchanting-Tools' 'sources/enchanter_tools/repo'
+
 # enhancedvisuals
 # https://www.curseforge.com/minecraft/mc-mods/enhancedvisuals
 git clone --depth 1 --branch '1.12' 'https://github.com/CreativeMD/EnhancedVisuals' 'sources/enhancedvisuals/repo'
@@ -579,7 +583,7 @@ git clone --depth 1 'https://github.com/AHilyard/LegendaryTooltips' 'sources/leg
 
 # levelup2
 # https://www.curseforge.com/minecraft/mc-mods/level-up
-git clone --depth 1 'https://github.com/BeetoGuy/LevelUp2' 'sources/levelup2/repo'
+git clone 'https://github.com/BeetoGuy/LevelUp2' 'sources/levelup2/repo' && cd 'sources/levelup2/repo' && git checkout 7a7266f && cd ../../..
 
 # librarianlib
 # https://www.curseforge.com/minecraft/mc-mods/librarianlib
