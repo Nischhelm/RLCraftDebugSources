@@ -76,10 +76,6 @@ git clone --depth 1 'https://github.com/AtomicStryker/atomicstrykers-minecraft-m
 # https://www.curseforge.com/minecraft/mc-mods/baubles
 git clone --depth 1 --branch 'master' 'https://github.com/Azanor/Baubles' 'sources/baubles/repo'
 
-# baubles
-# https://www.curseforge.com/minecraft/mc-mods/trinkets-and-baubles
-git clone --depth 1 --branch 'master' 'https://github.com/Azanor/Baubles' 'sources/baubles/repo'
-
 # baubleye
 # https://www.curseforge.com/minecraft/mc-mods/baubley-elytra
 git clone --depth 1 'https://github.com/jbredwards/Baubley-Elytra-Mod' 'sources/baubleye/repo'
@@ -1025,6 +1021,10 @@ git clone --depth 1 'https://github.com/gigaherz/ToolBelt' 'sources/toolbelt/rep
 # traverse
 # https://www.curseforge.com/minecraft/mc-mods/traverse-reforged
 git clone --depth 1 --branch 'v2.1.12' 'https://github.com/Reforged-Mods/Traverse-Reforged' 'sources/traverse/repo'
+
+# trinketsandbaubles
+# https://www.curseforge.com/minecraft/mc-mods/trinkets-and-baubles
+git clone --depth 1 --branch '1.12.2' 'https://github.com/XzeroAir/Trinkets' 'sources/trinketsandbaubles/repo'
 
 # trumpetskeleton
 # https://www.curseforge.com/minecraft/mc-mods/doot
